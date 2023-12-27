@@ -48,4 +48,19 @@
 - node_modules, package-lock.jsonが生成された
 - .gitignoreファイルを生成し、/node_modules/を記述(大量データでのgit pushエラーを避けるため)
 
+## http-serverの立ち上げ
+- package.jsonのあるルートディレクトリでnpx http-serverを実行
+- available on と表示されているhttp://~をコピーしてアクセス(例：http://127.0.0.1:8080)（リクエスト）
+- アクセスはリクエストとなり、レスポンスとしてファイルの内容が描画される
+- 描画されたpackage.jsonをクリックすると、ファイルに書かれたコードが表示される（レスポンス）
+- 確認できたらctrl + cで起動終了させる
+
+##　HTMLファイルをブラウザで表示するために
+- http-serverはpackage.jsonのあるディレクトリで実行される
+- そのディレクトリで表示させたいhtmlファイルを作成する
+- 例：hello.htmlを作成して、コードを書く
+- npx http-serverを実行でhttp-serverを起動させる
+- Available onのリンクに/hello.htmlを追加してアクセスすると描画される
+
+
 
