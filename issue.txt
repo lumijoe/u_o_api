@@ -1,0 +1,23 @@
+## セットアップ（Node.js, asdf）
+
+- js(文字列データ)を動かしているのは実行環境（ランタイム）Node.js
+
+- Node.jsのインストール(asdf)
+    nodebrew install-binary 16.16.0(v指定必要)
+    nodebrew ls
+    nodebrew use 16.16.0
+    node -v
+
+- asdfのインストール
+    https://asdf-vm.com/guide/getting-started.html　
+    brew install asdf
+    権限プロックの場合はsudoコマンドで権限所有確認、書き込み権限を付与、その後再度インストール
+    zshとhomebrewのコマンド：echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
+    asdf version (v指定不要)
+    
+- ターミナルの再起動で設定を反映
+
+
+
+
+
