@@ -61,6 +61,12 @@
 - 例：hello.htmlを作成して、コードを書く
 - npx http-serverを実行でhttp-serverを起動させる
 - Available onのリンクに/hello.htmlを追加してアクセスすると描画される
+- 例：hello.jsファイルを作成してアクセスはターミナルでnode hello.jsとすると中身が表示される
+
+## JavaScriptの関数とコールバック
+- 関数の定義３種類：functionSample.js
+- コールバック
+
 
 
 
