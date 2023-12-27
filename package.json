@@ -1,0 +1,22 @@
+{
+  "name": "u_o_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumijoe/u_o_api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lumijoe/u_o_api/issues"
+  },
+  "homepage": "https://github.com/lumijoe/u_o_api#readme",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}

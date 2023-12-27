@@ -35,5 +35,17 @@
     asdf installを実行すると、.tool-versionsで設定したversionがinstallされる
     node -v　でversioが16.16.0であればOK
 
+## npmでWebサーバーのパッケージをインストール
+- Node.js　npmパッケージマネージャーをpackage.jsonに設定を書いて使用する
+- cdで ls -aで、現在のファイル全てを確認
+- node -vでnodeのバージョンを再確認,16.16.0表示でOK
+- npm initで、設定を聞かれるがenterで次へ
+- ls でpackage.jsonの生成を確認
+
+## package.jsonを確認
+- デフォルト設定が表示される
+- 使用したいパッケージをinstallする(npm install http-server)httpサーバーを使用
+- node_modules, package-lock.jsonが生成された
+- .gitignoreファイルを生成し、/node_modules/を記述(大量データでのgit pushエラーを避けるため)
 
 
