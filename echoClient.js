@@ -24,7 +24,7 @@ socket.on('error', (err) => {
 // 標準入力(standardin)からデータを読み込んだら実行する処理を記述
 process.stdin.on('data', (data) => {
     // データを読み込んだら通信出入口に書き込む処理
-    // 接続先にメッセージを送る処理となる
+    // 接続先にメッセージを送る処理である
     socket.write(data)
 })
 
@@ -33,3 +33,7 @@ socket.on('data', (data) => {
     // データを受け取ったらコンソール出力する
     console.log(`dataの受け取り:${data}`)
 });
+
+/* 
+IPアドレス、ポート番号を指定して、メッセージを送る
+*/

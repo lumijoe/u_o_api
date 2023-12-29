@@ -24,6 +24,7 @@ const PORT = 3005;
     })
 
 // serverサーバー（PORT指定して起動）
+// 第2引数にローカルを入れることで同じPCからのクライアントを限定してやり取りすることを設定している
 server.listen(PORT, '127.0.0.1', () => {
     console.log(`server.jsのサーバーが起動しました: ${PORT}`)
 })
