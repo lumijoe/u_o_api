@@ -66,8 +66,12 @@
 ## JavaScriptの関数とコールバック
 - 関数の定義３種類：functionSample.js
 - コールバック：callbackSample.js
-    
 
-
+## echoプログラムのテスト
+- echoClient.jsとechoServer.jsを記述
+- clientとサーバーの両方を起動させるために
+- ターミナルを左右に分割
+- 左client用：node echoClient.jsの実行で
+- 右server用：node echoServer.jsの実行でconsole.log表示がなされていればOK
 
 

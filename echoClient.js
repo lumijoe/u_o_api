@@ -4,17 +4,22 @@
 const net = require('net')
 
 // 接続先を定義
-const SERVER_IP = '127.0.0.1'
-const SERVER_PORT = '3000'
+const SERVER_IP = 'localhost';
+const SERVER_PORT = 3000;
 
 // 通信の出入を準備
 const socket = new net.Socket()
 
 // IPアドレスとPORT番号を指定して、接続する
 // ３つ目の引数()は、接続したら実行したいコールバックを記述
-socket.connect(SERVER_IP, SERVER_PORT, () => {
-    console.log(`サーバー接続 IP:PORT ${SERVER_IP}:${SERVER_PORT}`)
+socket.connect(SERVER_PORT, SERVER_IP, () => {
+    console.log(`サーバー接続 ${SERVER_IP}:${SERVER_PORT}`)
 })
+
+// サーバーへの接続エラーが発生した場合のハンドリング
+socket.on('error', (err) => {
+    console.error('サーバー接続エラー:', err.message);
+});
 
 // 標準入力(standardin)からデータを読み込んだら実行する処理を記述
 process.stdin.on('data', (data) => {
@@ -27,4 +32,4 @@ process.stdin.on('data', (data) => {
 socket.on('data', (data) => {
     // データを受け取ったらコンソール出力する
     console.log(`dataの受け取り：${data}`)
-})
+});
