@@ -73,5 +73,9 @@
 - ターミナルを左右に分割、server起動後、client起動
 - 右server用：node echoServer.jsの実行でconsole.log表示がなされていればOK
 - 左client用：node echoClient.jsの実行
+- 接続後にクラアントターミナルで何か入力してenterすると
+    クライアント側：ターミナル入力をデータとして受け取り
+    サーバー側：それをデータとしてサーバーで受け取る
+    どちらのターミナルにも入力が反映される
 
 
