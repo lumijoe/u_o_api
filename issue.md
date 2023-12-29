@@ -70,8 +70,8 @@
 ## echoプログラムのテスト
 - echoClient.jsとechoServer.jsを記述
 - clientとサーバーの両方を起動させるために
-- ターミナルを左右に分割
-- 左client用：node echoClient.jsの実行で
+- ターミナルを左右に分割、server起動後、client起動
 - 右server用：node echoServer.jsの実行でconsole.log表示がなされていればOK
+- 左client用：node echoClient.jsの実行
 
 
