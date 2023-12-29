@@ -18,7 +18,7 @@ const server = net.createServer((socket) => {
         // 受け取ったデータの内容をそのまま送り返す
         socket.write(data)
     })
-    // 接続終了時の処理
+    // 接続されていた後に終了した時の処理(接続エラー時の接続試行終了では実行されない)
     socket.on('close', () => {
         console.log(`接続を終了しました`)
     })
