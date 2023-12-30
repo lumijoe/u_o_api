@@ -3,7 +3,7 @@
 // ネットライブラリの準備
 const net = require('net')
 // PORT番号3000を準備
-const PORT = 3005;
+const PORT = 3006;
 
     // createServerという関数：接続されたら実行する処理
     // コールバック関数でsocket関数を実行

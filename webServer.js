@@ -3,11 +3,14 @@
 // ネットライブラリの準備
 const net = require('net')
 // PORT番号3000を準備
-const PORT = 3005;
+const PORT = 3006;
 
 // helloResponseを定義
 const helloResponse = `HTTP/1.1 200 ok
 content-length: 237
+Cache-Control: no-cache, no-store, must-revalidate
+Pragma: no-cache
+Expires: 0
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -17,7 +20,7 @@ content-length: 237
     <title>Hello</title>
 </head>
 <body>
-    <h1>hello</h1>
+    <h1>hello hello</h1>
 </body>
 </html>
 `

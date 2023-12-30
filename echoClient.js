@@ -5,7 +5,7 @@ const net = require('net')
 
 // 接続先を定義
 const SERVER_IP = '127.0.0.1';
-const SERVER_PORT = 3005;
+const SERVER_PORT = 3006;
 
 // 通信の出入を準備
 const socket = new net.Socket()
