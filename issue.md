@@ -102,4 +102,33 @@
         (入力はサーバーに渡され、クライアントで描画される)
 
     ## webサーバー、webプログラムのテストの場合
+    - server側ターミナル：npx http-serverでwebサーバーを起動（Available onを参考に次へ）
+    **curlコマンド (自動リクエスト)**
+    - client側ターミナル：curl http://127.0.0.1:8080/hello.html IPアドレス部分はlocalhostにしてもOK
+        (curlコマンドがインストールされていなければbrew install curlなど必要)
+    - 接続できればclient側ターミナルにファイルの中身が表示、server側ターミナルではGET /ファイル名が表示される
+    - その他の情報も表示する時client側ターミナル：curl -v http://127.0.0.1:8080/hello.html
+        - httpリクエスト(クライアント側：入力されたURLを元に文字列を作成しサーバーに送信)
+            Trying...からAcceptまでの情報
+        - httpレスポンス(サーバー側：送信された情報をクライアントに見やすい形で返してくれる)
+            - **レスポンスヘッダー**：HTTP...OK(リクエスト成功)からKeep-Alive...まで
+            - **レスポンスボディー**：ファイルの中身、Connection...intactまで
+    **telnetコマンド （手作業リクエスト）**
+    - client側ターミナル：telnet localhost 8080を実行（127.0.0.1の方法ではできない）
+         (telnetコマンドがインストールされていなければbrew install telnetなど必要)
+    - ターミナルに手作業で入力が必要
+        - Trying...Escape...と表示されている後に入力していく
+        **リクエストコマンドを入力する**
+        - GET /hello.html HTTP/1.1
+          Host: localhost
+          User-Agent: curl/7.68.0
+          Accept: */*
+          (空行)
+          でenter実行する
+        - レスポンスヘッダーとレスポンスヘッダーが返される
+
+- 情報のやり取りが確認でき、Echoはクライアントが送信したデータをそのまま返す、Webではコンテンツを返す。
+- **Echo:反映やデバック確認の特性**か、**Web:コンテンツ提供の特性**かの違い。
+
+
 

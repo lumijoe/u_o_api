@@ -13,7 +13,7 @@ const PORT = 3005;
         // データを受け取った時の処理
         socket.on('data', (data) => {
             // 受け取ったデータを表示
-            console.log(`受け取ったデータ：${data}`)
+            console.log(`クライアントから受け取ったデータ：${data}`)
             // 受け取ったデータの内容をそのまま送り返す
             socket.write(data)
         })
