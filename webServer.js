@@ -33,13 +33,19 @@ Expires: 0
         console.log(`クライアントから接続されました`)
         // データを受け取ったら何をするかを設定する
         socket.on('data', (data) => {
-            /* ↓echoServerの設定になっているので、webServerの設定に書き換える
+            /* ↓echoServerの設定
              // 受け取ったデータを表示する
              console.log(`クライアントから受け取ったデータ：${data}`)
              // 受け取ったデータの内容をそのまま送り返す
              socket.write(data)
             */
 
+            /* ↓webServerの設定*/
+            const httpRequest = data.toString()
+            // httpRequestの改行コードを配列にしてindex０番(1行目)を取り出してrequestLineとする
+            const requestLine = httpRequest.split('\r\n')[0]
+            console.log(requestLine)
+            
             socket.write(helloResponse)
 
             

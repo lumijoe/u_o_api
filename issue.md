@@ -156,5 +156,6 @@
     - GETメソッド：
     - /hello.htmlというパスへのアクセス
     - HTTP/1.1を使用している
+- HTTPリクエストラインを定義しておく（webServer.js）
 
 
