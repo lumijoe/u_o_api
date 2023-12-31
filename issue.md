@@ -143,6 +143,7 @@
 
 ## nodeでコンテンツを返すテスト：Webサーバーのtelenetコマンド手動方式リクエストを固定リクエストとしてプログラムする
 - telnetで手動リクエストする時のHTTPリクエスト部分を、自動処理できるようにコードで定義しておく（webServer.js）
+- contentーlengthはバイト数を確認して記述する必要あり
 - server側ターミナル：node webServer.jsを実行してサーバーを起動
 - client側ターミナル：curl http://localhost:3006 レスポンスが返される    
 - client側ターミナル：curl -v http://localhost:3006 では、レスポンスヘッダーも確認可能
