@@ -141,10 +141,20 @@
 - **通信層の上にWeb層がある**　通信の仕組みの上にWebがある
 
 
-## nodeでコンテンツを返すテスト：Webサーバーのtelenetコマンド手動方式リクエストを固定リクエストとしてプログラムする
+## 固定HTMLを返すテスト：Webサーバーのtelenetコマンド手動方式リクエストを固定リクエストとしてプログラムする
 - telnetで手動リクエストする時のHTTPリクエスト部分を、自動処理できるようにコードで定義しておく（webServer.js）
 - contentーlengthはバイト数を確認して記述する必要あり
 - server側ターミナル：node webServer.jsを実行してサーバーを起動
 - client側ターミナル：curl http://localhost:3006 レスポンスが返される    
 - client側ターミナル：curl -v http://localhost:3006 では、レスポンスヘッダーも確認可能
 - **ブラウザで確認する方法** http://localhost:3006 にアクセスでブラウザに描画される
+
+## ファイルを読み込んで返すテスト：
+- server側：node webServer.jsを実行してサーバーを起動
+- client側：curl -v http://localhost:8080/hello.html mydir/heoo2.htmlにするとそのファイルを読み込む
+- **HTTPリクエストライン** GET /hello.html HTTP/1.1
+    - GETメソッド：
+    - /hello.htmlというパスへのアクセス
+    - HTTP/1.1を使用している
+
+
