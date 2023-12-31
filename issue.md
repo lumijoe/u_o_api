@@ -157,5 +157,8 @@
     - /hello.htmlというパスへのアクセス
     - HTTP/1.1を使用している
 - HTTPリクエストラインを定義しておく（webServer.js）
+    - server側：node webServer.js
+    - client側：curl http://localhost:8080/hello.html
+    - リクエストラインが表示される
 
 

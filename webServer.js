@@ -5,27 +5,6 @@ const net = require('net')
 // PORT番号3000を準備
 const PORT = 3006;
 
-// helloResponseを定義
-const helloResponse = `HTTP/1.1 200 ok
-content-length: 237
-Cache-Control: no-cache, no-store, must-revalidate
-Pragma: no-cache
-Expires: 0
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello</title>
-</head>
-<body>
-    <h1>hello hello</h1>
-</body>
-</html>
-
-`
-
     // createServerという関数：接続されたら実行する処理
     // コールバック関数でsocket関数を実行
     const server = net.createServer((socket) => {
@@ -45,11 +24,11 @@ Expires: 0
             // httpRequestの改行コードを配列にしてindex０番(1行目)を取り出してrequestLineとする
             const requestLine = httpRequest.split('\r\n')[0]
             console.log(requestLine)
-            
-            socket.write(helloResponse)
 
-            
+            const path = requestLine.split(' ')[1]
+            console.log(path)
         })
+
         // 接続されていた後に終了した時の処理(接続エラー時の接続試行終了では実行されない)
         socket.on('close', () => {
             console.log(`クライアントとの接続を終了しました`)
