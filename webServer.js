@@ -2,6 +2,9 @@
 
 // ネットライブラリの準備
 const net = require('net')
+// ファイルを読み込むNode.jsのfsモジュール
+const fs = require('fs')
+
 // PORT番号3000を準備
 const PORT = 3006;
 
@@ -27,6 +30,12 @@ const PORT = 3006;
 
             const path = requestLine.split(' ')[1]
             console.log(path)
+
+            // pathが/index.htmlの絶対パスから./index.htmlとして相対パスにする
+            const fileContent = fs.readFileSync(`.${path}`)
+            // 改行エスケープの記述でエラー回避
+            const httpResponse = `HTTP/1.1 200 OK\r\ncontent-length: ${fileContent.length}\r\n\r\n${fileContent}`;
+            socket.write(httpResponse)
         })
 
         // 接続されていた後に終了した時の処理(接続エラー時の接続試行終了では実行されない)

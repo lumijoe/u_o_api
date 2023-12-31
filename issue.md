@@ -156,9 +156,12 @@
     - GETメソッド：
     - /hello.htmlというパスへのアクセス
     - HTTP/1.1を使用している
-- HTTPリクエストラインを定義しておく（webServer.js）
+- HTTPリクエストライン[0]とパス[1]を定義しておく（webServer.js）
     - server側：node webServer.js
     - client側：curl http://localhost:8080/hello.html
-    - リクエストラインが表示される
+    - リクエストライン[0][1]が表示される
 
+- ファイルの読み込み設定
+    - Node.jsのファイルを読み込むモジュールfsのrequireと、fs.readFileSyncを記述
+    - serverとclientを起動させてターミナルで読み込みを確認する
 
