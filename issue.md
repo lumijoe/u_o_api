@@ -167,3 +167,11 @@
     - serverとclientを起動させてターミナルで読み込みを確認する
         - node webServer.jsとcurl http://localhost:3006/hello.html
 
+## /アクセスに対応させるテスト：
+- まず、curl -v http://localhost を実行で80ポートにアクセスしようとしたがPORT不明でエラーが出ることを確認
+- 次に curl -v http://localhost:3006 を実行でエラーを確認
+    - client側：Empty reply from serverエラー
+    - server側：illegal operation...エラー（ディレクトリなのにファイルのように読み込もうとしたエラー）
+       - エラーメッセージ　GET / HTTP/1.1 改行後に / が表示されている
+       - /が${path}になるので、webServer.jsコードで言うと./というファイルを読み込む処理になってしまっている
+       - 通常は/index.htmlの省略系が/であるので、index.htmlとしたくない場合はコードを変更する必要がある（webServer.js）

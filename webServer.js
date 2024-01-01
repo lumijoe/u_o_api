@@ -28,11 +28,15 @@ const PORT = 3006;
             const requestLine = httpRequest.split('\r\n')[0]
             console.log(requestLine)
 
+
             const path = requestLine.split(' ')[1]
             console.log(path)
-
+            // pathが/で終わっているtrueであれば、pathにindex.htmlを追加する　でないfalseであればpathそのままにしてrequestFileに代入する
+            const requestFile = path.endsWith('/') ? path + 'index.html' : path
             // pathが/index.htmlの絶対パスから./index.htmlとして相対パスにする
-            const fileContent = fs.readFileSync(`.${path}`)
+            const fileContent = fs.readFileSync(`.${requestFile}`)
+
+
             // 改行エスケープの記述でエラー回避
             const httpResponse = `HTTP/1.1 200 OK\r\ncontent-length: ${fileContent.length}\r\n\r\n${fileContent}`;
             socket.write(httpResponse)
