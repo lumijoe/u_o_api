@@ -149,7 +149,7 @@
 - client側ターミナル：curl -v http://localhost:3006 では、レスポンスヘッダーも確認可能
 - **ブラウザで確認する方法** http://localhost:3006 にアクセスでブラウザに描画される
 
-## ファイルを読み込んで返すテスト：
+## リクエストのパスに応じてファイルを読み込んで返すテスト：
 - server側：node webServer.jsを実行してサーバーを起動
 - client側：curl -v http://localhost:8080/hello.html mydir/heoo2.htmlにするとそのファイルを読み込む
 - **HTTPリクエストライン** GET /hello.html HTTP/1.1
@@ -157,6 +157,7 @@
     - /hello.htmlというパスへのアクセス
     - HTTP/1.1を使用している
 - HTTPリクエストライン[0]とパス[1]を定義しておく（webServer.js）
+    - server側：npx http-serverで実行Available onを確認
     - server側：node webServer.js
     - client側：curl http://localhost:8080/hello.html
     - リクエストライン[0][1]が表示される
@@ -164,4 +165,5 @@
 - ファイルの読み込み設定
     - Node.jsのファイルを読み込むモジュールfsのrequireと、fs.readFileSyncを記述
     - serverとclientを起動させてターミナルで読み込みを確認する
+        - node webServer.jsとcurl http://localhost:3006/hello.html
 
