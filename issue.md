@@ -182,6 +182,7 @@
 - server側のエラー表示：no such file or directory...ファイルが見当たらない
 - client側のエラー表示：closing connection...サーバーから応答なし
 - 見当たらないエラーを表示させるのではなく、一般的に404エラー表示を作成しそれを描画する必要がある
-- HTTPレスポンスの１行目で表示させる必要がある(webServer.js)
-
-
+- HTTPレスポンスの１行目で表示させる必要がある(webServer.jsでif (!fs.existsSync))
+- clientとserverで表示されたらブラウザでも確認する(http://localhost:3006)まずは表示確認
+- browserでhttp://localhost:3006/abc.htmlを実行してみる（本当は存在しないファイル）
+- 404エラーが表示されていればOK（デフォルト以外の404エラーページをカスタムする事は可能）
