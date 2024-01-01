@@ -174,4 +174,8 @@
     - server側：illegal operation...エラー（ディレクトリなのにファイルのように読み込もうとしたエラー）
        - エラーメッセージ　GET / HTTP/1.1 改行後に / が表示されている
        - /が${path}になるので、webServer.jsコードで言うと./というファイルを読み込む処理になってしまっている
-       - 通常は/index.htmlの省略系が/であるので、index.htmlとしたくない場合はコードを変更する必要がある（webServer.js）
+       - 通常は/index.htmlの省略系が/であるので、index.htmlとするために、一般挙動とコードを一致させる必要がある（webServer.js）
+- endsWithでtrue,falseの定義, serverとclientの起動確認
+
+## 404エラーページの実装
+
