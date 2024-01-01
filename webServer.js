@@ -33,6 +33,14 @@ const PORT = 3006;
             console.log(path)
             // pathが/で終わっているtrueであれば、pathにindex.htmlを追加する　でないfalseであればpathそのままにしてrequestFileに代入する
             const requestFile = path.endsWith('/') ? path + 'index.html' : path
+
+            // ファイルを開こうとしてもしファイルが存在しなければ、次を処理して、callackの処理を終える
+            if (!fs.existsSync(`.${requestFile}`)) {
+                const httpResponse = `HTTP/1.1 404 Not Found\r\ncontent-length: 0\r\n\r\n`
+                socket.write(httpResponse)
+                return
+            }
+
             // pathが/index.htmlの絶対パスから./index.htmlとして相対パスにする
             const fileContent = fs.readFileSync(`.${requestFile}`)
 

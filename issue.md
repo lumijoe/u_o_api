@@ -178,4 +178,10 @@
 - endsWithでtrue,falseの定義, serverとclientの起動確認
 
 ## 404エラーページの実装
+- 実装前の挙動を確認：node webServer.js実行、clientで存在しないファイルを実行してみるcurl -v http://localhost:3006/abc.html
+- server側のエラー表示：no such file or directory...ファイルが見当たらない
+- client側のエラー表示：closing connection...サーバーから応答なし
+- 見当たらないエラーを表示させるのではなく、一般的に404エラー表示を作成しそれを描画する必要がある
+- HTTPレスポンスの１行目で表示させる必要がある(webServer.js)
+
 
