@@ -177,7 +177,7 @@
        - 通常は/index.htmlの省略系が/であるので、index.htmlとするために、一般挙動とコードを一致させる必要がある（webServer.js）
 - endsWithでtrue,falseの定義, serverとclientの起動確認
 
-## 404エラーページの実装
+## 404エラーページの実装（リクエスト側client側エラー400-499）
 - 実装前の挙動を確認：node webServer.js実行、clientで存在しないファイルを実行してみるcurl -v http://localhost:3006/abc.html
 - server側のエラー表示：no such file or directory...ファイルが見当たらない
 - client側のエラー表示：closing connection...サーバーから応答なし
@@ -186,3 +186,4 @@
 - clientとserverで表示されたらブラウザでも確認する(http://localhost:3006)まずは表示確認
 - browserでhttp://localhost:3006/abc.htmlを実行してみる（本当は存在しないファイル）
 - 404エラーが表示されていればOK（デフォルト以外の404エラーページをカスタムする事は可能）
+- MDN参考　https://developer.mozilla.org/ja/docs/Web/HTTP/Status
